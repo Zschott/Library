@@ -1,0 +1,28 @@
+.header{
+    display: flex;
+    justify-content: center;
+    border: solid 1px black;
+    margin-bottom: 20px;
+}
+
+
+.content{
+    display: flex;
+    justify-content: center;
+}
+
+.card{
+    height: 280px;
+    width: 280px;
+    border: solid 1px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.card > div{
+    border: solid 1px red;
+    display: flex;
+    justify-content: center;
+}
+
