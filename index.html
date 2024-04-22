@@ -3,19 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src = "app.js"></script>
     <link rel="stylesheet" href="style.css">
     <title>Library</title>
 </head>
 <body>
-    <div class="header">Library</div>
-    <div class="content">
+    <div class="header"><h1>Library</h1></div>
+        <div class="form-layer">
+            <form  class="form">
+                <h3>New Book</h3>
+              <input
+                class="input"
+                type="text"
+                id="title"
+                placeholder="Title"
+                required
+                maxlength="100"
+              />
+              <input
+                class="input"
+                type="text"
+                id="author"
+                placeholder="Author"
+                required
+                maxlength="100"
+              />
+              <input
+                class="input"
+                type="number"
+                id="pages"
+                placeholder="Pages"
+                required
+                max="10000"
+              />
+              <input
+                class="input"
+                type="text"
+                id="read"
+                placeholder="Have you read it? (Y/N)"
+                required
+                maxlength="10"
+              />
+              <div class="space" id="doStuff" type="reset"><button>Add to Library</button></div> 
+              <input type="reset" value="Reset Form">
+            </form>
+    </div>
+    <div id="content">
+        <!-- Card Structure
         <div class="card">
             <div id="title"></div>
             <div id="author"></div>
             <div id="pages"></div>
             <div id="read"></div>
         </div>
+        -->
+    <button id="test">test</button>
+    <div id="tray"></div>
+           
     </div>
+<script src = "app.js"></script>
 </body>
 </html>
