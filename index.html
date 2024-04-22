@@ -35,14 +35,10 @@
                 required
                 max="10000"
               />
-              <input
-                class="input"
-                type="text"
-                id="read"
-                placeholder="Have you read it? (Y/N)"
-                required
-                maxlength="10"
-              />
+              <div class="checkbox-container">
+                <label for="readStatus">Have you read it?</label>
+                <input type="checkbox" id="readStatus" name="readStatus" value="Read">
+              </div>
               <div class="space" id="doStuff" type="reset"><button>Add to Library</button></div> 
               <input type="reset" value="Reset Form">
             </form>
