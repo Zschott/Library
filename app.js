@@ -3,10 +3,12 @@ const content = document.querySelector('#content')
 const newBookBtn = document.getElementById('doStuff')
 const removeButton = document.getElementById('remove')
 
-let book1 = {title: "Way of Kings", author: 'Brandon Sanderson', pages: '1100', readStatus:'Read'}
-let book2 = {title:'Fool Moon', author:'Jim Buthcer', pages:'350', readStatus:'Read'}
+/*
+let book1 = {title: "Way of Kings", author: 'Brandon Sanderson', pages: '1100', readStatus:'true'}
+let book2 = {title:'Fool Moon', author:'Jim Buthcer', pages:'350', readStatus:'true'}
+*/
 
-const myLibrary = [book1, book2]
+const myLibrary = []
 
 function Book(title, author, pages, readStatus){
     this.title = title;
@@ -21,7 +23,7 @@ function stageNewBook(){
     const title = document.getElementById('title').value
     const author = document.getElementById('author').value
     const pages = document.getElementById('pages').value
-    const readStatus = document.getElementById('readStatus').value 
+    const readStatus = document.getElementById('readStatus').checked
     return new Book(title, author, pages, readStatus)
 }
 
@@ -56,13 +58,13 @@ function createBookCard(book) {
     author.textContent = book.author
     pages.textContent = `${book.pages} pages`
 
-    if(book.readStatus === "Read"){
-        book.readStatus = "Read"
+    if(book.readStatus == true){
+        book.textContent = "Read"
       } else {
-        book.readStatus = " Not Read"
+        book.textContent = "Not Read"
       }
     
-    readStatus.textContent = `${book.readStatus}`
+    readStatus.textContent = `${book.textContent}`
     readStatus.setAttribute('onclick', `toggleReadStatus(${myLibrary.indexOf(myLibrary[i])})`)
 
     
@@ -83,10 +85,12 @@ function createBookCard(book) {
 newBookBtn.addEventListener('click', addBooktoLibrary)
 
 function toggleReadStatus(index){
-    if (myLibrary[index].readStatus === "Read") {
-        myLibrary[index].readStatus = "Not Read";
+    if (myLibrary[index].readStatus === true) {
+        myLibrary[index].readStatus.textContent = "Not Read";
+        myLibrary[index].readStatus = false;
     } else {
-        myLibrary[index].readStatus = "Read";
+       myLibrary[index].readStatus.textContent = "Read"
+        myLibrary[index].readStatus = true;
     }
     displayLibrary()
 }
